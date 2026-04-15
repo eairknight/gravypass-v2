@@ -1,0 +1,77 @@
+@keyframes goldpulse {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes goldsweep {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes goldsweep2 {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes btnpop {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.03); }
+}
+
+@keyframes ctabounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes arrowbounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+@keyframes scrollt {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes skshk {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-12deg); }
+  75% { transform: rotate(12deg); }
+}
+
+@keyframes toastIn {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}
+
+@keyframes errorIn {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  15% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+  25% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  75% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+}
+
+@keyframes billdrop {
+  0% { transform: translateY(-100%) rotate(0deg); opacity: 0.15; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* Dollar bills in start screen */
+.bill:nth-child(1) { left: 5%; animation: billdrop 5s linear infinite; animation-delay: 0s; }
+.bill:nth-child(2) { left: 15%; animation: billdrop 6s linear infinite; animation-delay: 1.2s; }
+.bill:nth-child(3) { left: 25%; animation: billdrop 4.5s linear infinite; animation-delay: 0.5s; }
+.bill:nth-child(4) { left: 35%; animation: billdrop 5.5s linear infinite; animation-delay: 2s; }
+.bill:nth-child(5) { left: 45%; animation: billdrop 4s linear infinite; animation-delay: 0.8s; }
+.bill:nth-child(6) { left: 55%; animation: billdrop 6.5s linear infinite; animation-delay: 1.5s; }
+.bill:nth-child(7) { left: 65%; animation: billdrop 5s linear infinite; animation-delay: 3s; }
+.bill:nth-child(8) { left: 75%; animation: billdrop 4.2s linear infinite; animation-delay: 0.3s; }
+.bill:nth-child(9) { left: 85%; animation: billdrop 5.8s linear infinite; animation-delay: 2.5s; }
+.bill:nth-child(10) { left: 95%; animation: billdrop 4.8s linear infinite; animation-delay: 1s; }
+.bill:nth-child(11) { left: 10%; animation: billdrop 5.3s linear infinite; animation-delay: 3.5s; }
+.bill:nth-child(12) { left: 30%; animation: billdrop 6.2s linear infinite; animation-delay: 4s; }
+.bill:nth-child(13) { left: 50%; animation: billdrop 4.7s linear infinite; animation-delay: 0.7s; }
+.bill:nth-child(14) { left: 70%; animation: billdrop 5.6s linear infinite; animation-delay: 2.2s; }
+.bill:nth-child(15) { left: 90%; animation: billdrop 4.3s linear infinite; animation-delay: 1.8s; }

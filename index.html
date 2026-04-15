@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>GravyPass - Earn Cash Now</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ═══ AFFILIATE TRACKING SCRIPTS ═══ -->
+  <!-- Add tracking pixels, postback URLs, cookie scripts below -->
+</head>
+<body>
+
+  <!-- ═══ TOP NAV ═══ -->
+  <nav class="nav">
+    <div class="logo">Gravy<span class="logo-gold">Pass</span></div>
+    <div class="nav-r">
+      <div class="lives-row">
+        <span class="heart" id="heart0">&#10084;&#65039;</span>
+        <span class="heart" id="heart1">&#10084;&#65039;</span>
+        <span class="heart" id="heart2">&#10084;&#65039;</span>
+        <span class="heart" id="heart3">&#10084;&#65039;</span>
+      </div>
+      <button class="mute-btn" id="muteBtn">&#128266;</button>
+    </div>
+  </nav>
+
+  <!-- ═══ GIANT MONEY DISPLAY ═══ -->
+  <div class="money-hero">
+    <div class="money-label">YOUR EARNINGS</div>
+    <div class="money-amount" id="winningsNum">$0.00</div>
+    <div class="money-sub">
+      <span class="mult-badge" id="multiplierBadge">1.00x</span>
+      <span class="streak-badge" id="streakBadge">&#128293; 0 streak</span>
+    </div>
+  </div>
+
+  <!-- ═══ CASHOUT PROGRESS BAR ═══ -->
+  <div class="cashout-bar-wrap">
+    <div class="cashout-bar-bg">
+      <div class="cashout-bar-fill" id="cashoutFill" style="width:0%"></div>
+      <div class="cashout-bar-text" id="cashoutText">$0.00 / $10.00</div>
+    </div>
+    <div class="cashout-bar-label">CASH OUT GOAL</div>
+  </div>
+
+  <!-- ═══ GAME AREA ═══ -->
+  <div class="game-area" id="gameArea">
+    <!-- Floating cashout CTA — always visible when earnings > 0 -->
+    <div class="float-cta" id="floatCTA" style="display:none">
+      <button class="float-cta-btn" id="floatCTABtn">
+        &#128176; CASH OUT NOW &mdash; <span id="floatCTAAmount">$0.00</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══ LEVEL BAR ═══ -->
+  <div class="level-strip" id="levelStrip">
+    <span class="level-name" id="levelName">Easy Money</span>
+    <div class="level-bar-bg">
+      <div class="level-bar-fill" id="levelFill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <!-- ═══ TICKER ═══ -->
+  <div class="ticker">
+    <div class="tick-inner" id="tickerInner"></div>
+  </div>
+
+  <!-- ═══ OVERLAYS ═══ -->
+  <div class="toast" id="toast"></div>
+  <div class="error-flash" id="errorFlash"></div>
+
+  <!-- Tier glow border -->
+  <div class="tier-glow" id="tierGlow" style="display:none"></div>
+  <div class="tier-label" id="tierLabel" style="display:none"></div>
+
+  <!-- Frenzy mode overlay -->
+  <div class="frenzy-overlay" id="frenzyOverlay" style="display:none">
+    <div class="frenzy-text">FRENZY MODE</div>
+    <div class="frenzy-sub">2x EVERYTHING!</div>
+  </div>
+
+  <!-- Jackpot banner -->
+  <div class="jackpot-banner" id="jackpotBanner" style="display:none">
+    <div class="jackpot-stars">&#11088;&#11088;&#11088;</div>
+    <div class="jackpot-msg" id="jackpotMsg">JACKPOT!</div>
+    <div class="jackpot-slots">
+      <span class="slot-digit">$</span><span class="slot-digit">0</span><span class="slot-digit">.</span><span class="slot-digit">0</span><span class="slot-digit">0</span>
+    </div>
+    <div class="jackpot-amount" id="jackpotAmount">+$0.00</div>
+    <div class="jackpot-stars">&#11088;&#11088;&#11088;</div>
+  </div>
+
+  <!-- Near miss -->
+  <div class="near-miss" id="nearMiss" style="display:none">SO CLOSE! Almost hit the JACKPOT...</div>
+
+  <!-- Live cashout popup (fake other players) -->
+  <div class="live-cashout" id="liveCashout" style="display:none">
+    <div class="lc-icon">&#9989;</div>
+    <div class="lc-text">
+      <span class="lc-name" id="lcName">Mike T.</span> just cashed out
+      <span class="lc-amount" id="lcAmount">$5.20</span>
+    </div>
+  </div>
+
+  <!-- Milestone celebration -->
+  <div class="milestone-popup" id="milestonePopup" style="display:none">
+    <div class="ms-emoji">&#127881;</div>
+    <div class="ms-msg" id="msMsg">YOU HIT $1.00!</div>
+    <div class="ms-sub">Keep going — cash out anytime!</div>
+  </div>
+
+  <!-- ═══ START OVERLAY ═══ -->
+  <div class="start-ov" id="startOv">
+    <!-- Coin rain -->
+    <div class="coin">&#129689;</div><div class="coin">&#128176;</div><div class="coin">&#129689;</div>
+    <div class="coin">&#128181;</div><div class="coin">&#129689;</div><div class="coin">&#128176;</div>
+    <div class="coin">&#128181;</div><div class="coin">&#129689;</div><div class="coin">&#128176;</div>
+    <div class="coin">&#128181;</div><div class="coin">&#129689;</div><div class="coin">&#128181;</div>
+    <div class="coin">&#129689;</div><div class="coin">&#128176;</div><div class="coin">&#129689;</div>
+    <div class="coin">&#128181;</div><div class="coin">&#129689;</div><div class="coin">&#128176;</div>
+
+    <div class="start-content">
+      <div class="start-badge">&#128293; LIVE &mdash; 2,847 people playing now</div>
+
+      <div class="start-big-money">
+        <div class="sbm-label">EARN UP TO</div>
+        <div class="sbm-amount">$50+</div>
+        <div class="sbm-sub">per session</div>
+      </div>
+
+      <h1 class="start-title">
+        TAP &amp; EARN<br>
+        <span class="start-gold">REAL CASH</span>
+      </h1>
+
+      <div class="start-stats">
+        <div class="ss-card">
+          <div class="ss-num">$0.15</div>
+          <div class="ss-label">per tap</div>
+        </div>
+        <div class="ss-card ss-highlight">
+          <div class="ss-num">500x</div>
+          <div class="ss-label">max multi</div>
+        </div>
+        <div class="ss-card">
+          <div class="ss-num">$50+</div>
+          <div class="ss-label">top earners</div>
+        </div>
+      </div>
+
+      <div class="start-how">
+        <div class="sh-step"><span>&#128176;</span> Tap coins</div>
+        <div class="sh-arrow">&#10132;</div>
+        <div class="sh-step"><span>&#128200;</span> Earn cash</div>
+        <div class="sh-arrow">&#10132;</div>
+        <div class="sh-step"><span>&#128179;</span> Cash out</div>
+      </div>
+
+      <button class="play-btn" id="playBtn">
+        <span class="play-btn-text">START EARNING</span>
+        <span class="play-btn-sub">Free to play &mdash; cash out anytime</span>
+      </button>
+
+      <div class="start-proof">
+        <div class="sp-item">&#9989; Sarah K. cashed out <b>$14.50</b> &mdash; 2 min ago</div>
+        <div class="sp-item">&#9989; James R. earned <b>$22.10</b> &mdash; 5 min ago</div>
+        <div class="sp-item">&#9989; Mia C. withdrew <b>$8.40</b> &mdash; 8 min ago</div>
+      </div>
+
+      <p class="disclaimer">4 lives &middot; 21+ only &middot; US residents</p>
+    </div>
+  </div>
+
+  <!-- ═══ GAME OVER OVERLAY ═══ -->
+  <div class="go-ov" id="goOv">
+    <div class="go-content">
+      <div class="go-emoji">&#128184;&#128184;&#128184;</div>
+      <h2 class="go-title">You Earned</h2>
+      <div class="go-amount" id="goWinnings">$0.00</div>
+      <div class="go-sub">Don't lose your earnings!</div>
+
+      <div class="go-urgency">
+        <div class="go-urgency-icon">&#9888;&#65039;</div>
+        <div class="go-urgency-text">Unclaimed earnings expire soon</div>
+      </div>
+
+      <button class="go-wallet-btn" id="goWalletBtn">
+        &#128176; CASH OUT &mdash; <span id="goWalletAmount">$0.00</span>
+      </button>
+      <button class="go-retry-btn" id="goRetryBtn">&#128260; Play Again &amp; Earn More</button>
+
+      <div class="go-proof">&#9989; 147 people cashed out in the last hour</div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

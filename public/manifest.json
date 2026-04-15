@@ -1,0 +1,17 @@
+{
+  "name": "GravyPass - Earn Cash",
+  "short_name": "GravyPass",
+  "description": "Tap & earn real cash! Cash out anytime.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}

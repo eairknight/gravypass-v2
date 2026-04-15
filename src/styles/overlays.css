@@ -1,0 +1,315 @@
+/* ═══ V2: START OVERLAY — MONEY FOCUSED ═══════ */
+.start-ov {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 50% 15%, rgba(255, 215, 0, 0.08), transparent 50%),
+              linear-gradient(180deg, #0e0e15, #0a0a0f);
+  overflow: hidden;
+  padding: 16px;
+}
+
+.start-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 380px;
+  width: 100%;
+  z-index: 2;
+}
+
+.start-badge {
+  background: rgba(255, 23, 68, 0.15);
+  border: 1px solid rgba(255, 23, 68, 0.4);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: clamp(9px, 2.5vw, 11px);
+  font-weight: 800;
+  color: #FF6B6B;
+  margin-bottom: 14px;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 23, 68, 0.3); }
+  50% { box-shadow: 0 0 0 6px rgba(255, 23, 68, 0); }
+}
+
+/* Big money showcase */
+.start-big-money {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.sbm-label {
+  font-size: clamp(10px, 2.8vw, 12px);
+  font-weight: 700;
+  color: var(--dim);
+  letter-spacing: 3px;
+}
+
+.sbm-amount {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(52px, 16vw, 76px);
+  background: linear-gradient(135deg, var(--gold), var(--gold-light), #FFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.5));
+  line-height: 1;
+}
+
+.sbm-sub {
+  font-size: clamp(10px, 3vw, 12px);
+  font-weight: 700;
+  color: var(--dim-light);
+}
+
+.start-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(24px, 7vw, 36px);
+  text-align: center;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  color: var(--white);
+}
+
+.start-gold {
+  display: block;
+  background: linear-gradient(90deg, var(--gold), #FF6D00, var(--gold-light), var(--gold));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldpulse 1.5s ease-in-out infinite;
+}
+
+/* Stats cards */
+.start-stats {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.ss-card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 12px;
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.ss-card.ss-highlight {
+  background: rgba(255, 215, 0, 0.08);
+  border-color: rgba(255, 215, 0, 0.35);
+}
+
+.ss-num {
+  font-size: clamp(18px, 5.5vw, 24px);
+  font-weight: 900;
+  color: var(--cash);
+}
+
+.ss-highlight .ss-num { color: var(--gold); }
+
+.ss-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* How-to row */
+.start-how {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  font-size: clamp(10px, 3vw, 12px);
+  font-weight: 800;
+  color: var(--dim-light);
+}
+
+.sh-step span { font-size: 16px; }
+.sh-arrow { color: var(--gold); font-size: 14px; }
+
+/* Play button — V2: green = money = go */
+.play-btn {
+  width: 100%;
+  max-width: 320px;
+  background: linear-gradient(135deg, #00C853, #00E676, #69F0AE);
+  background-size: 200% 200%;
+  animation: goldsweep 2.5s linear infinite, btnpop 1.6s ease-in-out infinite;
+  color: #0a0a0f;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  padding: 14px 20px;
+  border: 3px solid rgba(255, 255, 255, 0.35);
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 30px rgba(0, 200, 83, 0.5), inset 0 -3px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+  touch-action: manipulation;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.play-btn-text {
+  font-size: clamp(18px, 5.5vw, 24px);
+  letter-spacing: 2px;
+}
+
+.play-btn-sub {
+  font-size: clamp(9px, 2.5vw, 11px);
+  font-weight: 700;
+  opacity: 0.7;
+  letter-spacing: 0;
+}
+
+/* Social proof */
+.start-proof {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.sp-item {
+  font-size: clamp(10px, 2.8vw, 12px);
+  color: var(--dim);
+  padding: 3px 0;
+  text-align: center;
+}
+
+.sp-item b { color: var(--cash); }
+
+.disclaimer {
+  font-size: 9px;
+  color: var(--dim);
+  text-align: center;
+}
+
+/* Coin rain */
+.coin {
+  position: absolute;
+  font-size: 24px;
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ═══ GAME OVER OVERLAY — CASH OUT EMPHASIS ═══ */
+.go-ov {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 15, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px;
+}
+
+.go-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: 340px;
+  width: 100%;
+}
+
+.go-emoji { font-size: 40px; }
+
+.go-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(22px, 6vw, 28px);
+  color: var(--white);
+}
+
+.go-amount {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(44px, 14vw, 64px);
+  background: linear-gradient(135deg, var(--gold), var(--gold-light), #FFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.5));
+  line-height: 1.1;
+}
+
+.go-sub {
+  color: var(--dim-light);
+  font-size: clamp(12px, 3.5vw, 14px);
+  font-weight: 700;
+}
+
+/* Urgency element */
+.go-urgency {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 23, 68, 0.12);
+  border: 1px solid rgba(255, 23, 68, 0.3);
+  border-radius: 10px;
+  padding: 8px 14px;
+  width: 100%;
+  animation: urgencyPulse 1.5s ease-in-out infinite;
+}
+
+.go-urgency-icon { font-size: 18px; }
+.go-urgency-text {
+  font-size: clamp(11px, 3vw, 13px);
+  font-weight: 800;
+  color: #FF6B6B;
+}
+
+@keyframes urgencyPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 23, 68, 0.2); }
+  50% { box-shadow: 0 0 0 4px rgba(255, 23, 68, 0); }
+}
+
+/* Cash out button — BIG and GREEN */
+.go-wallet-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #00C853, #00E676);
+  color: #0a0a0f;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(16px, 5vw, 20px);
+  font-weight: 900;
+  padding: 16px 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(0, 200, 83, 0.5);
+  touch-action: manipulation;
+  animation: ctaPulse 1.2s ease-in-out infinite;
+  letter-spacing: 1px;
+}
+
+.go-retry-btn {
+  background: transparent;
+  color: var(--dim);
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.go-proof {
+  font-size: clamp(10px, 2.8vw, 12px);
+  color: var(--cash);
+  font-weight: 700;
+  margin-top: 4px;
+}
