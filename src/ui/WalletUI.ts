@@ -48,7 +48,7 @@ export class WalletUI {
     // Update cashout progress bar
     const pct = Math.min((amount / CASHOUT_GOAL) * 100, 100);
     this.cashoutFill.style.width = `${pct}%`;
-    this.cashoutText.textContent = `${formatted} / ${formatCurrency(CASHOUT_GOAL)}`;
+    this.cashoutText.textContent = `${formatted} / ${formatCurrency(CASHOUT_GOAL)} cash out goal`;
 
     // Show top wallet button when winnings > $0.05
     if (amount >= 0.05 && this.topWalletWrap.style.display === 'none') {

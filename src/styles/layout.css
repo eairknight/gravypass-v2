@@ -143,16 +143,16 @@
 /* ── CASHOUT PROGRESS BAR ────────────── */
 .cashout-bar-wrap {
   flex-shrink: 0;
-  padding: 10px 16px 6px;
+  padding: 10px 16px 4px;
   background: transparent;
   z-index: 5;
 }
 
 .cashout-bar-bg {
   position: relative;
-  height: 22px;
+  height: 30px;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(63, 193, 228, 0.3);
+  border: 1.5px solid rgba(63, 193, 228, 0.35);
   border-radius: 100px;
   overflow: hidden;
 }
@@ -171,20 +171,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(9px, 2.5vw, 11px);
+  font-size: clamp(11px, 3.2vw, 14px);
   font-weight: 800;
   color: var(--white);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-  letter-spacing: 0.5px;
-}
-
-.cashout-bar-label {
-  text-align: center;
-  font-size: 8px;
-  font-weight: 700;
-  color: var(--dim-light);
-  letter-spacing: 2px;
-  margin-top: 2px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.3px;
 }
 
 /* ── TOP ADD TO WALLET BUTTON ────────── */
@@ -253,51 +244,51 @@
   50% { transform: scale(1.04); box-shadow: 0 4px 32px rgba(34, 197, 94, 0.8), 0 0 60px rgba(34, 197, 94, 0.3); }
 }
 
-/* ── LEVEL STRIP ─────────────────────── */
-.level-strip {
+/* ── BOTTOM BAR: level chip + ticker ──────── */
+.bottom-bar {
   flex-shrink: 0;
+  background: rgba(10, 24, 32, 0.97);
+  border-top: 1px solid rgba(63, 193, 228, 0.2);
+  z-index: 10;
+}
+
+/* Small level chip above the ticker, not its own full strip */
+.level-chip {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 4px 16px;
-  background: rgba(10, 24, 32, 0.95);
-  border-top: 1px solid rgba(63, 193, 228, 0.15);
-  z-index: 5;
+  gap: 10px;
+  padding: 6px 16px 2px;
 }
 
-.level-name {
-  font-size: clamp(10px, 2.8vw, 12px);
-  font-weight: 800;
+.level-chip-name {
+  font-size: clamp(11px, 3.2vw, 13px);
+  font-weight: 900;
   color: var(--brand-light);
   white-space: nowrap;
-  min-width: 70px;
+  letter-spacing: 0.3px;
 }
 
-.level-bar-bg {
+.level-chip-bar {
   flex: 1;
-  height: 6px;
+  height: 5px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 100px;
   overflow: hidden;
 }
 
-.level-bar-fill {
+.level-chip-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--brand-dark), var(--brand), var(--brand-light));
   border-radius: 100px;
   transition: width 0.3s;
+  box-shadow: 0 0 8px rgba(63, 193, 228, 0.4);
 }
 
-/* ── TICKER ──────────────────────────── */
 .ticker {
-  flex-shrink: 0;
-  height: 28px;
-  background: rgba(10, 24, 32, 0.97);
-  border-top: 1px solid rgba(63, 193, 228, 0.15);
+  height: 30px;
   overflow: hidden;
   display: flex;
   align-items: center;
-  z-index: 10;
 }
 
 .tick-inner {
@@ -305,7 +296,7 @@
   gap: 24px;
   white-space: nowrap;
   animation: scrollt 20s linear infinite;
-  font-size: 11px;
+  font-size: clamp(11px, 3vw, 13px);
   color: var(--dim-light);
 }
 

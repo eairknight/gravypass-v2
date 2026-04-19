@@ -92,8 +92,9 @@ export class HUD {
     this.levelBanner.addChild(this.levelBannerBg, this.levelBannerText);
     this.levelBanner.visible = false;
 
+    // V2: only add the mid-game overlays (countdown / combo / level-up banner).
+    // streak/multiplier/level label/level bar are handled by the DOM.
     this.container.addChild(
-      this.levelBar, this.levelText, this.streakText, this.multiplierText,
       this.countdownText, this.comboBanner, this.levelBanner,
     );
   }
@@ -110,18 +111,10 @@ export class HUD {
     this.levelBanner.y = h * 0.35;
   }
 
-  updateScore(streak: number, multiplier: number, level: number, progress: number, label: string): void {
-    this.streakText.text = streak > 0 ? `${streak} STREAK` : '';
-    this.multiplierText.text = `${multiplier.toFixed(2)}x`;
-
-    // Level bar
-    this.levelBar.clear();
-    this.levelBar.rect(0, 0, this.w, 4);
-    this.levelBar.fill({ color: 0x1a0050 });
-    this.levelBar.rect(0, 0, this.w * progress, 4);
-    this.levelBar.fill({ color: 0xA855F7 });
-
-    this.levelText.text = `LVL ${level + 1} - ${label}`;
+  updateScore(_streak: number, _multiplier: number, _level: number, _progress: number, _label: string): void {
+    // V2: in-canvas HUD strip removed — streak/multiplier are shown in the
+    // money-hero DOM card above, and level progress is shown via level-up
+    // banners + the bottom level strip. Keeping method signature for callers.
   }
 
   showCountdown(count: number): void {
