@@ -38,14 +38,14 @@
   50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
 }
 
-/* Big money showcase — blue card like the screenshot */
+/* Big money showcase — blue card, the hero element */
 .start-big-money {
   text-align: center;
-  margin-bottom: 14px;
-  padding: 18px 24px;
+  margin-bottom: 4px;
+  padding: 22px 24px;
   background: linear-gradient(135deg, var(--brand), var(--brand-light));
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(63, 193, 228, 0.3);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(63, 193, 228, 0.4);
   width: 100%;
 }
 
@@ -91,57 +91,34 @@
   animation: goldpulse 1.5s ease-in-out infinite;
 }
 
-/* Stats cards */
-.start-stats {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 14px;
+/* Clean benefits list */
+.start-benefits {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 18px 0 20px;
+  padding: 0 4px;
 }
 
-.ss-card {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(63, 193, 228, 0.25);
-  border-radius: 12px;
-  padding: 8px 4px;
-  text-align: center;
-}
-
-.ss-card.ss-highlight {
-  background: rgba(63, 193, 228, 0.1);
-  border-color: rgba(63, 193, 228, 0.45);
-}
-
-.ss-num {
-  font-size: clamp(18px, 5.5vw, 24px);
-  font-weight: 900;
-  color: var(--cash);
-}
-
-.ss-highlight .ss-num { color: var(--brand-light); }
-
-.ss-label {
-  font-size: 9px;
-  font-weight: 700;
-  color: var(--dim-light);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* How-to row */
-.start-how {
+.sb-row {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-bottom: 16px;
-  font-size: clamp(10px, 3vw, 12px);
-  font-weight: 800;
-  color: var(--dim-light);
+  gap: 10px;
+  font-size: clamp(13px, 3.8vw, 15px);
+  font-weight: 700;
+  color: var(--offwhite);
 }
 
-.sh-step span { font-size: 16px; }
-.sh-arrow { color: var(--brand); font-size: 14px; }
+.sb-row b {
+  color: var(--cash);
+  font-weight: 900;
+}
+
+.sb-check {
+  font-size: 16px;
+  flex-shrink: 0;
+}
 
 /* Play button — green = go */
 .play-btn {
@@ -178,20 +155,20 @@
   letter-spacing: 0;
 }
 
-/* Social proof */
+/* Social proof — single line */
 .start-proof {
   width: 100%;
-  margin-bottom: 8px;
+  margin: 10px 0 6px;
 }
 
 .sp-item {
-  font-size: clamp(10px, 2.8vw, 12px);
-  color: var(--dim-light);
-  padding: 3px 0;
+  font-size: clamp(11px, 3vw, 13px);
+  color: var(--cash);
+  font-weight: 700;
   text-align: center;
 }
 
-.sp-item b { color: var(--cash); }
+.sp-item b { color: var(--gold-light, #FFED4A); }
 
 .disclaimer {
   font-size: 9px;
@@ -199,14 +176,7 @@
   text-align: center;
 }
 
-/* Coin rain */
-.coin {
-  position: absolute;
-  font-size: 24px;
-  opacity: 0.12;
-  pointer-events: none;
-  z-index: 1;
-}
+/* (coin rain removed — was causing overlap bugs and cluttering the UI) */
 
 /* ═══ GAME OVER OVERLAY ═══ */
 .go-ov {
