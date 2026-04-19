@@ -1,20 +1,25 @@
 :root {
-  /* Premium gold/black casino theme */
-  --bg1: #0a0a0f;
-  --bg2: #111118;
-  --bg3: #1a1a25;
+  /* Gravy Pass brand — sky blue, friendly, cheerful */
+  --bg1: #0a1820;
+  --bg2: #0f2230;
+  --bg3: #153042;
+  --brand: #3FC1E4;        /* the sky blue from the card */
+  --brand-light: #6DD5ED;
+  --brand-dark: #2A9CC4;
+  --sky: #87CEEB;
   --gold: #FFD700;
-  --gold-dark: #B8860B;
   --gold-light: #FFED4A;
-  --green: #00E676;
-  --green-dark: #00C853;
+  --green: #22C55E;
+  --green-dark: #16A34A;
+  --green-light: #4ADE80;
+  --grass: #4ADE80;
   --red: #FF1744;
   --red-dark: #D50000;
   --purple: #7C4DFF;
-  --cyan: #00E5FF;
   --cash: #4ADE80;
   --white: #FFFFFF;
-  --offwhite: #F0F0F5;
-  --dim: #6B7280;
-  --dim-light: #9CA3AF;
+  --offwhite: #F0F8FF;
+  --dim: #64748B;
+  --dim-light: #94A3B8;
+  --card-dark: #0F1729;
 }

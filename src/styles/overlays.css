@@ -1,4 +1,4 @@
-/* ═══ V2: START OVERLAY — MONEY FOCUSED ═══════ */
+/* ═══ V2 BLUE: START OVERLAY ═══════════ */
 .start-ov {
   position: fixed;
   inset: 0;
@@ -6,8 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at 50% 15%, rgba(255, 215, 0, 0.08), transparent 50%),
-              linear-gradient(180deg, #0e0e15, #0a0a0f);
+  background: radial-gradient(ellipse at 50% 20%, rgba(63, 193, 228, 0.15), transparent 60%),
+              linear-gradient(180deg, #0f2230, #0a1820);
   overflow: hidden;
   padding: 16px;
 }
@@ -22,50 +22,54 @@
 }
 
 .start-badge {
-  background: rgba(255, 23, 68, 0.15);
-  border: 1px solid rgba(255, 23, 68, 0.4);
+  background: rgba(34, 197, 94, 0.18);
+  border: 1px solid rgba(34, 197, 94, 0.45);
   border-radius: 100px;
   padding: 5px 14px;
   font-size: clamp(9px, 2.5vw, 11px);
   font-weight: 800;
-  color: #FF6B6B;
+  color: var(--green-light);
   margin-bottom: 14px;
   animation: badgePulse 2s ease-in-out infinite;
 }
 
 @keyframes badgePulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 23, 68, 0.3); }
-  50% { box-shadow: 0 0 0 6px rgba(255, 23, 68, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.3); }
+  50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
 }
 
-/* Big money showcase */
+/* Big money showcase — blue card like the screenshot */
 .start-big-money {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-light));
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(63, 193, 228, 0.3);
+  width: 100%;
 }
 
 .sbm-label {
   font-size: clamp(10px, 2.8vw, 12px);
-  font-weight: 700;
-  color: var(--dim);
-  letter-spacing: 3px;
+  font-weight: 800;
+  color: var(--card-dark);
+  letter-spacing: 2px;
+  opacity: 0.7;
 }
 
 .sbm-amount {
   font-family: 'Fredoka One', cursive;
   font-size: clamp(52px, 16vw, 76px);
-  background: linear-gradient(135deg, var(--gold), var(--gold-light), #FFF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.5));
+  color: var(--card-dark);
   line-height: 1;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.2);
 }
 
 .sbm-sub {
   font-size: clamp(10px, 3vw, 12px);
   font-weight: 700;
-  color: var(--dim-light);
+  color: var(--card-dark);
+  opacity: 0.7;
 }
 
 .start-title {
@@ -79,7 +83,7 @@
 
 .start-gold {
   display: block;
-  background: linear-gradient(90deg, var(--gold), #FF6D00, var(--gold-light), var(--gold));
+  background: linear-gradient(90deg, var(--brand), var(--brand-light), var(--gold), var(--brand));
   background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -97,16 +101,16 @@
 
 .ss-card {
   flex: 1;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 215, 0, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(63, 193, 228, 0.25);
   border-radius: 12px;
   padding: 8px 4px;
   text-align: center;
 }
 
 .ss-card.ss-highlight {
-  background: rgba(255, 215, 0, 0.08);
-  border-color: rgba(255, 215, 0, 0.35);
+  background: rgba(63, 193, 228, 0.1);
+  border-color: rgba(63, 193, 228, 0.45);
 }
 
 .ss-num {
@@ -115,12 +119,12 @@
   color: var(--cash);
 }
 
-.ss-highlight .ss-num { color: var(--gold); }
+.ss-highlight .ss-num { color: var(--brand-light); }
 
 .ss-label {
   font-size: 9px;
   font-weight: 700;
-  color: var(--dim);
+  color: var(--dim-light);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -137,28 +141,29 @@
 }
 
 .sh-step span { font-size: 16px; }
-.sh-arrow { color: var(--gold); font-size: 14px; }
+.sh-arrow { color: var(--brand); font-size: 14px; }
 
-/* Play button — V2: green = money = go */
+/* Play button — green = go */
 .play-btn {
   width: 100%;
   max-width: 320px;
-  background: linear-gradient(135deg, #00C853, #00E676, #69F0AE);
+  background: linear-gradient(135deg, #16A34A, #22C55E, #4ADE80);
   background-size: 200% 200%;
   animation: goldsweep 2.5s linear infinite, btnpop 1.6s ease-in-out infinite;
-  color: #0a0a0f;
+  color: white;
   font-family: 'Poppins', sans-serif;
   font-weight: 900;
   padding: 14px 20px;
-  border: 3px solid rgba(255, 255, 255, 0.35);
+  border: 3px solid rgba(255, 255, 255, 0.4);
   border-radius: 16px;
   cursor: pointer;
-  box-shadow: 0 6px 30px rgba(0, 200, 83, 0.5), inset 0 -3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 30px rgba(34, 197, 94, 0.5), inset 0 -3px 0 rgba(0, 0, 0, 0.15);
   margin-bottom: 12px;
   touch-action: manipulation;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .play-btn-text {
@@ -169,7 +174,7 @@
 .play-btn-sub {
   font-size: clamp(9px, 2.5vw, 11px);
   font-weight: 700;
-  opacity: 0.7;
+  opacity: 0.8;
   letter-spacing: 0;
 }
 
@@ -181,7 +186,7 @@
 
 .sp-item {
   font-size: clamp(10px, 2.8vw, 12px);
-  color: var(--dim);
+  color: var(--dim-light);
   padding: 3px 0;
   text-align: center;
 }
@@ -198,12 +203,12 @@
 .coin {
   position: absolute;
   font-size: 24px;
-  opacity: 0.10;
+  opacity: 0.12;
   pointer-events: none;
   z-index: 1;
 }
 
-/* ═══ GAME OVER OVERLAY — CASH OUT EMPHASIS ═══ */
+/* ═══ GAME OVER OVERLAY ═══ */
 .go-ov {
   position: fixed;
   inset: 0;
@@ -211,7 +216,7 @@
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(10, 10, 15, 0.96);
+  background: rgba(10, 24, 32, 0.96);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 20px;
@@ -237,11 +242,11 @@
 .go-amount {
   font-family: 'Fredoka One', cursive;
   font-size: clamp(44px, 14vw, 64px);
-  background: linear-gradient(135deg, var(--gold), var(--gold-light), #FFF);
+  background: linear-gradient(135deg, var(--brand), var(--brand-light), #fff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.5));
+  filter: drop-shadow(0 0 16px rgba(63, 193, 228, 0.5));
   line-height: 1.1;
 }
 
@@ -251,7 +256,6 @@
   font-weight: 700;
 }
 
-/* Urgency element */
 .go-urgency {
   display: flex;
   align-items: center;
@@ -279,8 +283,8 @@
 /* Cash out button — BIG and GREEN */
 .go-wallet-btn {
   width: 100%;
-  background: linear-gradient(135deg, #00C853, #00E676);
-  color: #0a0a0f;
+  background: linear-gradient(135deg, #16A34A, #22C55E);
+  color: white;
   font-family: 'Poppins', sans-serif;
   font-size: clamp(16px, 5vw, 20px);
   font-weight: 900;
@@ -288,20 +292,21 @@
   border: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   cursor: pointer;
-  box-shadow: 0 4px 24px rgba(0, 200, 83, 0.5);
+  box-shadow: 0 4px 24px rgba(34, 197, 94, 0.5);
   touch-action: manipulation;
   animation: ctaPulse 1.2s ease-in-out infinite;
   letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .go-retry-btn {
   background: transparent;
-  color: var(--dim);
+  color: var(--dim-light);
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
   font-weight: 700;
   padding: 10px 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 100px;
   cursor: pointer;
   touch-action: manipulation;

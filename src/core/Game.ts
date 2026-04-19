@@ -105,7 +105,7 @@ export class Game {
     this.app = new Application();
     await this.app.init({
       resizeTo: gameArea,
-      backgroundColor: hexToNum('#0a0a0f'),
+      backgroundColor: hexToNum('#0a1820'),
       antialias: true,
       resolution: Math.min(window.devicePixelRatio, 2),
       autoDensity: true,
@@ -221,10 +221,10 @@ export class Game {
     this.bus.on('powerup:activated', ({ type }: { type: string }) => {
       this.sfx.playPowerUp();
       this.haptics.powerUp();
-      this.vfx.screenFlash(0x7C4DFF, 0.2);
+      this.vfx.screenFlash(0x3FC1E4, 0.2);
       const labels: Record<string, string> = {
         freeze: 'FREEZE!', magnet: 'MAGNET!', shield: 'SHIELD!',
-        doubleScore: '2X SCORE!', golden: 'GOLDEN PLATE! +$1.00',
+        doubleScore: '2X SCORE!', golden: 'GOLDEN PLATE! +$0.10',
       };
       this.showToast(labels[type] || type);
     });
@@ -266,9 +266,9 @@ export class Game {
       this.casinoUI.showLuckySpin();
       this.sfx.playBonus();
       this.haptics.powerUp();
-      this.score.winnings = parseFloat((this.score.winnings + 0.50).toFixed(2));
+      this.score.winnings = parseFloat((this.score.winnings + 0.05).toFixed(2));
       this.walletUI.updateWinnings(this.score.winnings);
-      this.floatingText.spawn(this.app.screen.width / 2, this.app.screen.height * 0.3, '+$0.50 LUCKY!', 0xFFD700, 24);
+      this.floatingText.spawn(this.app.screen.width / 2, this.app.screen.height * 0.3, '+$0.05 LUCKY!', 0xFFD700, 24);
       this.livePopups.checkMilestone(this.score.winnings);
     });
 
@@ -423,9 +423,9 @@ export class Game {
     if (hit.powerUp) {
       this.powerUps.activate(hit);
       if (hit.powerUp === 'golden') {
-        this.score.winnings = parseFloat((this.score.winnings + 1.00).toFixed(2));
+        this.score.winnings = parseFloat((this.score.winnings + 0.10).toFixed(2));
         this.particles.coinShower(hit.x, hit.y);
-        this.floatingText.spawn(hit.x, hit.y - 20, '+$1.00', 0xFFD700, 26);
+        this.floatingText.spawn(hit.x, hit.y - 20, '+$0.10', 0xFFD700, 26);
       }
       this.particles.powerUpSparkle(hit.x, hit.y, hexToNum(hit.color));
     }

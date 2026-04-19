@@ -1,6 +1,6 @@
 // ═══ V2: MONEY-FIRST CASINO GAME CONFIG ═══════════════════
 
-export const OFFER_URL = 'https://gravypass.com/offer';
+export const OFFER_URL = 'https://blue-host-media.com/cf/click';
 
 // Grid
 export const COLS = 3;
@@ -15,20 +15,20 @@ export const HIT_PADDING = 1.45;
 export const MAX_LIVES = 4;
 export const INVINCIBILITY_MS = 2000;
 
-// Scoring — MUCH more generous, big numbers feel addictive
-export const BASE_WIN = 0.15;
-export const WIN_PER_STREAK = 0.025;
-export const MAX_WIN_PER_TAP = 0.50;
-export const MULTIPLIER_PER_STREAK = 0.20;
-export const BONUS_MULTIPLIER = 3;
+// Scoring — feels rewarding but realistic (~$3-5 per session)
+export const BASE_WIN = 0.02;
+export const WIN_PER_STREAK = 0.003;
+export const MAX_WIN_PER_TAP = 0.06;
+export const MULTIPLIER_PER_STREAK = 0.12;
+export const BONUS_MULTIPLIER = 2;
 
 // Combo — easier to trigger, bigger rewards
 export const COMBO_WINDOW_MS = 500;
 export const COMBO_TIERS = [
-  { min: 2, max: 4, bonus: 1.3 },
-  { min: 5, max: 9, bonus: 1.8 },
-  { min: 10, max: 19, bonus: 2.5 },
-  { min: 20, max: Infinity, bonus: 3.5 },
+  { min: 2, max: 4, bonus: 1.1 },
+  { min: 5, max: 9, bonus: 1.2 },
+  { min: 10, max: 19, bonus: 1.4 },
+  { min: 20, max: Infinity, bonus: 1.6 },
 ];
 
 // Physics
@@ -87,17 +87,17 @@ export const POWERUP_DURATIONS: Record<string, number> = {
   golden: 0,
 };
 
-// Milestones — many small ones for frequent celebrations
-export const MILESTONES = [0.50, 1, 2, 5, 10, 15, 20, 30, 50];
+// Milestones — scaled to realistic earnings
+export const MILESTONES = [0.25, 0.50, 1, 2, 3, 5, 7, 10];
 
 // Cashout progress bar target
-export const CASHOUT_GOAL = 10.00;
+export const CASHOUT_GOAL = 3.00;
 
 // ═══ CASINO PSYCHOLOGY ═══════════════════════
 export const JACKPOT_CHANCE_PER_TAP = 0.03;
 export const JACKPOT_MIN_STREAK = 5;
-export const JACKPOT_AMOUNTS = [0.25, 0.50, 0.75, 1.00, 2.00, 5.00, 10.00];
-export const JACKPOT_WEIGHTS = [25, 25, 20, 15, 8, 5, 2];
+export const JACKPOT_AMOUNTS = [0.05, 0.10, 0.15, 0.25, 0.50, 0.75, 1.00];
+export const JACKPOT_WEIGHTS = [30, 25, 20, 12, 8, 3, 2];
 
 export const HOT_STREAK_THRESHOLD = 4;
 export const FIRE_STREAK_THRESHOLD = 8;
@@ -107,13 +107,13 @@ export const LUCKY_SPIN_STREAK = 10;
 export const NEAR_WIN_CHANCE = 0.20;
 
 export const FRENZY_THRESHOLD = 12;
-export const FRENZY_BONUS = 2.0;
+export const FRENZY_BONUS = 1.3;
 
 // Fake "live cashout" popups
 export const CASHOUT_POPUP_INTERVAL_S = 8;
 export const CASHOUT_POPUP_AMOUNTS = [
-  '$3.40', '$5.20', '$7.80', '$11.60', '$14.50',
-  '$9.30', '$22.10', '$6.70', '$18.90', '$8.40',
+  '$1.80', '$2.40', '$3.10', '$4.50', '$2.90',
+  '$3.70', '$5.20', '$1.95', '$4.10', '$3.60',
 ];
 export const CASHOUT_POPUP_NAMES = [
   'Mike T.', 'Sarah K.', 'James R.', 'Ashley M.', 'Chris P.', 'Jess L.',
@@ -126,26 +126,28 @@ export const JACKPOT_MESSAGES = [
   'PAYDAY!', 'CASH BONUS!', 'LUCKY WIN!',
 ];
 
-// ═══ PREMIUM GOLD/BLACK THEME ═══════════════
+// ═══ GRAVY PASS BLUE BRAND THEME ═══════════════
 export const COLORS = {
-  bg1: '#0a0a0f',
-  bg2: '#111118',
-  bg3: '#1a1a25',
+  bg1: '#0a1820',
+  bg2: '#0f2230',
+  bg3: '#153042',
+  brand: '#3FC1E4',
+  brandLight: '#6DD5ED',
+  brandDark: '#2A9CC4',
   gold: '#FFD700',
-  goldDark: '#B8860B',
   goldLight: '#FFED4A',
-  green: '#00E676',
-  greenDark: '#00C853',
+  green: '#22C55E',
+  greenDark: '#16A34A',
+  greenLight: '#4ADE80',
   red: '#FF1744',
   redDark: '#D50000',
   purple: '#7C4DFF',
-  cyan: '#00E5FF',
   white: '#FFFFFF',
-  dim: '#6B7280',
+  dim: '#64748B',
   cash: '#4ADE80',
 };
 
-export const TILE_COLORS = ['#FFD700', '#00E676', '#00E5FF', '#FF6D00', '#7C4DFF', '#FF4081'];
+export const TILE_COLORS = ['#3FC1E4', '#22C55E', '#FFD700', '#6DD5ED', '#4ADE80', '#FFED4A'];
 export const BOMB_COLORS = ['#FF1744', '#FF5252'];
 export const BONUS_COLOR = '#FFD700';
 

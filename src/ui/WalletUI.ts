@@ -10,6 +10,8 @@ export class WalletUI {
   private cashoutText: HTMLElement;
   private multiplierBadge: HTMLElement;
   private streakBadge: HTMLElement;
+  private topWalletWrap: HTMLElement;
+  private topWalletAmount: HTMLElement;
 
   constructor() {
     this.floatCTA = document.getElementById('floatCTA')!;
@@ -19,23 +21,27 @@ export class WalletUI {
     this.cashoutText = document.getElementById('cashoutText')!;
     this.multiplierBadge = document.getElementById('multiplierBadge')!;
     this.streakBadge = document.getElementById('streakBadge')!;
+    this.topWalletWrap = document.getElementById('topWalletWrap')!;
+    this.topWalletAmount = document.getElementById('topWalletAmount')!;
 
-    // Wire up float CTA to redirect
+    // Wire both buttons to redirect
     document.getElementById('floatCTABtn')!.addEventListener('click', () => this.redirectToOffer());
+    document.getElementById('topWalletBtn')!.addEventListener('click', () => this.redirectToOffer());
   }
 
   updateWinnings(amount: number): void {
     const formatted = formatCurrency(amount);
     this.winningsDisplay.textContent = formatted;
     this.floatCTAAmount.textContent = formatted;
+    this.topWalletAmount.textContent = formatted;
 
     // Money bump animation
     this.winningsDisplay.classList.remove('bump');
     void this.winningsDisplay.offsetWidth;
     this.winningsDisplay.classList.add('bump');
 
-    // Big glow when > $1
-    if (amount >= 1) {
+    // Big glow when > $0.50
+    if (amount >= 0.50) {
       this.winningsDisplay.classList.add('big-glow');
     }
 
@@ -44,10 +50,10 @@ export class WalletUI {
     this.cashoutFill.style.width = `${pct}%`;
     this.cashoutText.textContent = `${formatted} / ${formatCurrency(CASHOUT_GOAL)}`;
 
-    // Show float CTA when winnings > $0.30
-    if (amount >= 0.30 && this.floatCTA.style.display === 'none') {
-      this.floatCTA.style.display = 'flex';
-      gsap.fromTo(this.floatCTA, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 });
+    // Show top wallet button when winnings > $0.05
+    if (amount >= 0.05 && this.topWalletWrap.style.display === 'none') {
+      this.topWalletWrap.style.display = 'block';
+      gsap.fromTo(this.topWalletWrap, { y: -10, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4 });
     }
   }
 
@@ -79,10 +85,12 @@ export class WalletUI {
     this.streakBadge.style.color = '';
     this.streakBadge.style.borderColor = '';
     this.floatCTA.style.display = 'none';
+    this.topWalletWrap.style.display = 'none';
   }
 
   hideFloatCTA(): void {
     this.floatCTA.style.display = 'none';
+    this.topWalletWrap.style.display = 'none';
   }
 
   redirectToOffer(): void {

@@ -76,7 +76,7 @@ export class Background {
       const x = colX(c, this.w);
       this.lanes.moveTo(x, 0);
       this.lanes.lineTo(x, this.h);
-      this.lanes.stroke({ color: 0xFFD700, width: ts * 0.04, alpha: 0.04 });
+      this.lanes.stroke({ color: 0x3FC1E4, width: ts * 0.04, alpha: 0.05 });
     }
 
     // Danger line
@@ -96,7 +96,7 @@ export class Background {
       s.alpha += Math.sin(performance.now() * 0.001 * s.speed) * dt * 0.5;
       s.alpha = Math.max(0.05, Math.min(0.6, s.alpha));
       this.sparkGfx.circle(s.x, s.y, s.size);
-      this.sparkGfx.fill({ color: 0xFFD700, alpha: s.alpha * 0.7 });
+      this.sparkGfx.fill({ color: 0x3FC1E4, alpha: s.alpha * 0.7 });
     }
 
     // Speed lines at level 4+
@@ -109,7 +109,7 @@ export class Background {
         const len = rnd(20, 60);
         this.speedLines.moveTo(x, y);
         this.speedLines.lineTo(x, y + len);
-        this.speedLines.stroke({ color: 0xFFD700, width: 1, alpha: intensity });
+        this.speedLines.stroke({ color: 0x3FC1E4, width: 1, alpha: intensity });
       }
     }
   }

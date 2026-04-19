@@ -5,20 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#0a0a0f">
-  <title>GravyPass - Earn Cash Now</title>
+  <meta name="theme-color" content="#3FC1E4">
+  <title>Gravy Pass - Earn Cash Now</title>
   <link rel="icon" href="/favicon.ico">
   <link rel="manifest" href="/manifest.json">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- ═══ AFFILIATE TRACKING SCRIPTS ═══ -->
-  <!-- Add tracking pixels, postback URLs, cookie scripts below -->
+  <!-- ═══ CLICKFLARE TRACKING ═══ -->
+  <script>!function(){"use strict";var t="lp_ref",n="cpid",e="lpurl",c="https://blue-host-media.com",r="(?<domain>http(?:s?)://[^/]*)".concat("/cf/click"),a="(?:(?:/(?<cta>[1-9][0-9]*)/?)|(?:/))?",i="^".concat(r).concat(a).concat("(?:$|(\\?.*))"),o='javascript:window.clickflare.l="(?<original_link>'.concat(r).concat(a,'("|(\\?[^"]*"))).*'),s=function(){return new RegExp(i,"")},u=function(){return new RegExp(o,"")};function l(t){var n=function(t){return t.replace(s(),(function(t){for(var n=[],e=1;e<arguments.length;e++)n[e-1]=arguments[e];var r=n[n.length-1].domain;return t.replace(r,c)}))}(t);return'javascript:window.clickflare.l="'.concat(n,'"; void 0;')}function d(t,n){if(n&&t&&n.apply(document,[t]),/loaded|interactive|complete/.test(document.readyState))for(var e=0,c=document.links.length;e<c;e++)if(s().test(document.links[e].href)){var r=document.links[e];window.clickflare.links_replaced.has(r)||(r.href=l(r.href),window.clickflare.links_replaced.add(r))}}var f,h,m,p;!function(r,a){var i=document.onreadystatechange;window.clickflare||(window.clickflare={listeners:{},customParams:{},links_replaced:new Set,addEventListener:function(t,n){var e=this.listeners[t]||[];e.includes(n)||e.push(n),this.listeners[t]=e},dispatchEvent:function(t,n){n&&(this.customParams[t]=n),(this.listeners[t]||[]).forEach((function(t){return t(n)}))},push:function(t,n){n&&(this.customParams[t]=n),(this.listeners[t]||[]).forEach((function(t){return t(n)}))}},document.onreadystatechange=function(t){return d(t,i)},d(null,i),setTimeout((function(){!function(r,a){var i,o=function(r,a){var i=new URL("".concat(c).concat(r));o=a,s="{",u=s+s,l="_",d=l+l,o.startsWith(u)||o.startsWith(d)||i.searchParams.set(n,a);var o,s,u,l,d;return i.searchParams.append(t,document.referrer),i.searchParams.append(e,location.href),i.searchParams.append("lpt",document.title),i.searchParams.append("t",(new Date).getTime().toString()),i.toString()}(r,a),s=document.createElement("script"),l=document.scripts[0];s.async=1,s.src=o,s.onerror=function(){!function(){for(var t=function(t,n){var e=document.links[t];u().test(decodeURI(e.href))&&setTimeout((function(){e&&e.setAttribute("href",function(t){var n=t.match(u());if(n){var e=(n.groups||{}).original_link;return e?e.slice(0,-1):t}return t}(decodeURI(e.href)))}))},n=0,e=document.links.length;n<e;n++)t(n)}()},null===(i=l.parentNode)||void 0===i||i.insertBefore(s,l)}(r,a)})))}("".concat("/cf/tags","/").concat(new URL(window.location.href).searchParams.get("cftmid")||"__CONTAINER_ID__"),(m=new URL(window.location.href).searchParams.get(n),f=new RegExp("(^| )".concat("cf_cpid","=([^;]+)")),p=(h=document.cookie.match(f))&&h.pop()||null,m||p||"__CAMPAIGN_ID__"))}();</script>
 </head>
 <body>
 
   <!-- ═══ TOP NAV ═══ -->
   <nav class="nav">
-    <div class="logo">Gravy<span class="logo-gold">Pass</span></div>
+    <div class="logo">Gravy <span class="logo-gold">Pass</span></div>
     <div class="nav-r">
       <div class="lives-row">
         <span class="heart" id="heart0">&#10084;&#65039;</span>
@@ -49,9 +49,16 @@
     <div class="cashout-bar-label">CASH OUT GOAL</div>
   </div>
 
+  <!-- ═══ TOP ADD TO WALLET BUTTON ═══ -->
+  <div class="top-wallet-wrap" id="topWalletWrap" style="display:none">
+    <button class="top-wallet-btn" id="topWalletBtn">
+      &#128176; ADD TO WALLET &mdash; <span id="topWalletAmount">$0.00</span>
+    </button>
+  </div>
+
   <!-- ═══ GAME AREA ═══ -->
   <div class="game-area" id="gameArea">
-    <!-- Floating cashout CTA — always visible when earnings > 0 -->
+    <!-- Hidden float CTA kept for compatibility -->
     <div class="float-cta" id="floatCTA" style="display:none">
       <button class="float-cta-btn" id="floatCTABtn">
         &#128176; CASH OUT NOW &mdash; <span id="floatCTAAmount">$0.00</span>
@@ -131,7 +138,7 @@
 
       <div class="start-big-money">
         <div class="sbm-label">EARN UP TO</div>
-        <div class="sbm-amount">$50+</div>
+        <div class="sbm-amount">$5+</div>
         <div class="sbm-sub">per session</div>
       </div>
 
@@ -142,15 +149,15 @@
 
       <div class="start-stats">
         <div class="ss-card">
-          <div class="ss-num">$0.15</div>
+          <div class="ss-num">$0.02</div>
           <div class="ss-label">per tap</div>
         </div>
         <div class="ss-card ss-highlight">
-          <div class="ss-num">500x</div>
+          <div class="ss-num">100x</div>
           <div class="ss-label">max multi</div>
         </div>
         <div class="ss-card">
-          <div class="ss-num">$50+</div>
+          <div class="ss-num">$5+</div>
           <div class="ss-label">top earners</div>
         </div>
       </div>
@@ -169,9 +176,9 @@
       </button>
 
       <div class="start-proof">
-        <div class="sp-item">&#9989; Sarah K. cashed out <b>$14.50</b> &mdash; 2 min ago</div>
-        <div class="sp-item">&#9989; James R. earned <b>$22.10</b> &mdash; 5 min ago</div>
-        <div class="sp-item">&#9989; Mia C. withdrew <b>$8.40</b> &mdash; 8 min ago</div>
+        <div class="sp-item">&#9989; Sarah K. cashed out <b>$3.80</b> &mdash; 2 min ago</div>
+        <div class="sp-item">&#9989; James R. earned <b>$4.60</b> &mdash; 5 min ago</div>
+        <div class="sp-item">&#9989; Mia C. withdrew <b>$2.90</b> &mdash; 8 min ago</div>
       </div>
 
       <p class="disclaimer">4 lives &middot; 21+ only &middot; US residents</p>
